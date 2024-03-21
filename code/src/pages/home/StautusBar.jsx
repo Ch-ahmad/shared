@@ -2,10 +2,12 @@ import React from "react";
 
 const StautusBar = () => {
   return (
-    <div className="flex gap-[15px] w-full flex-wrap">
-      {[...Array(11).keys()].map((item, i) => (
-        <SingleStauts key={item + i} />
-      ))}
+    <div className="w-full">
+      <div className="flex gap-[15px] md:w-full md:flex-wrap overflow-y-auto no-scrollbar">
+        {[...Array(11).keys()].map((item, i) => (
+          <SingleStauts key={item + i} />
+        ))}
+      </div>
     </div>
   );
 };

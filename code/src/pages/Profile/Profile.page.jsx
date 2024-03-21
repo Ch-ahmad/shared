@@ -10,7 +10,7 @@ const ProfilePage = () => {
   }, []);
   return (
     <div className="flex items-center justify-center w-full mt-[20px] flex-col">
-      <div className="w-full md:w-[70%]">
+      <div className="w-full md:w-[70%] ">
         <ProfileHeader />
       </div>
       <div className="w-full md:w-[70%]">

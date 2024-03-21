@@ -5,7 +5,7 @@ import { FaPlus } from "react-icons/fa6";
 const ProfileHeader = () => {
   return (
     <div className="">
-      <div className="w-full flex items-center gap-x-[60px]">
+      <div className=" flex-col md:flex-row w-full flex items-center gap-[60px]">
         <img
           src="https://source.unsplash.com/closeup-photography-of-woman-smiling-mEZ3PoFGs_k"
           alt="Profile"
@@ -30,13 +30,12 @@ function HeaderDetailsSection() {
       <div className="w-full flex items-center gap-x-[20px]">
         <h2 className="text-textWhite-primary font-semibold">John Doe</h2>
         <button
-          className="px-[12px] py-[8px] bg-hoverBg text-textWhite-primary text-[16px] font-semibold rounded-[10px]
-        hover:bg-hoverBg/35 transition-colors
+          className="px-[8px] md:px-[12px] py-[8px] bg-hoverBg text-textWhite-primary text-[12px] md:text-[16px] font-semibold rounded-[10px] hover:bg-hoverBg/35 transition-colors
         "
         >
           Edit Profile
         </button>
-        <button className="px-[12px] py-[8px] bg-hoverBg text-textWhite-primary text-[16px] font-semibold rounded-[10px] hover:bg-hoverBg/35 transition-colors">
+        <button className="px-[8px] md:px-[12px] py-[8px] bg-hoverBg text-textWhite-primary text-[12px] md:text-[16px] font-semibold rounded-[10px] hover:bg-hoverBg/35 transition-colors">
           View Archieve
         </button>
         <button>

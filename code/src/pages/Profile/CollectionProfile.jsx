@@ -6,7 +6,7 @@ const CollectionProfile = () => {
           key={i}
           src="https://source.unsplash.com/closeup-photography-of-woman-smiling-mEZ3PoFGs_k"
           alt="Profile"
-          className="w-[31%] h-[300px] object-cover rounded"
+          className="w-[48%] md:-[31%] h-[300px] object-cover rounded"
         />
       ))}
     </div>

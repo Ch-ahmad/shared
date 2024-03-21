@@ -9,7 +9,7 @@ export default function HomePage() {
       <div className="w-full md:w-[70%] ">
         <StautusBar />
         <div className="w-full flex  justify-center mt-[20px]">
-          <div className="w-[70%] space-y-[15px]">
+          <div className="w-full md:w-[70%] space-y-[15px]">
             {[...Array(10).keys()].map((i) => (
               <SinglePost />
             ))}

@@ -53,7 +53,7 @@ const SideBar = () => {
     },
   ];
   return (
-    <div className="px-[12px] pt-[8px] pb-[20px] h-full  w-[70px] lg:w-[255px] border-r-[1px] border-[#0e0e01]">
+    <div className="px-[5px] md:px-[12px] pt-[8px] pb-[20px] h-full  w-[50px] lg:w-[255px] border-r-[1px] border-[#0e0e01]">
       <div className="text-textWhite-primary h-[92px]  items-center font-bold text-[20px] pl-[10px] hidden lg:flex">
         Instagram
       </div>
