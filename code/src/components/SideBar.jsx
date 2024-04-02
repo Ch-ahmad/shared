@@ -22,26 +22,6 @@ const SideBar = () => {
       icon: <FiSearch className="size-[22px] text-textWhite-primary" />,
     },
     {
-      title: "Explore",
-      url: "/explore",
-      icon: <MdOutlineExplore className="size-[22px] text-textWhite-primary" />,
-    },
-    {
-      title: "Reels",
-      url: "/reels",
-      icon: <BiSolidMoviePlay className="size-[22px] text-textWhite-primary" />,
-    },
-    {
-      title: "Messages",
-      url: "/messages",
-      icon: <BsMessenger className="size-[22px] text-textWhite-primary" />,
-    },
-    {
-      title: "Notifications",
-      url: "/notifications",
-      icon: <CiHeart className="size-[22px] text-textWhite-primary" />,
-    },
-    {
       title: "Create Post",
       url: "/create-post",
       icon: <FaRegPlusSquare className="size-[22px] text-textWhite-primary" />,
@@ -55,7 +35,7 @@ const SideBar = () => {
   return (
     <div className="px-[5px] md:px-[12px] pt-[8px] pb-[20px] h-full  w-[50px] lg:w-[255px] border-r-[1px] border-[#0e0e01]">
       <div className="text-textWhite-primary h-[92px]  items-center font-bold text-[20px] pl-[10px] hidden lg:flex">
-        Instagram
+        LensFlare
       </div>
       <nav className="space-y-[3px]">
         {sideBars.map((link) => (

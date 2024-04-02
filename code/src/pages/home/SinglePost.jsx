@@ -85,7 +85,7 @@ function PostComment() {
   return (
     <div className="">
       <p className="text-textWhite-primary">
-        Liked by <bold>hasni3062</bold> and others
+        Liked by <bold>Ahmadd</bold> and others
       </p>
     </div>
   );
