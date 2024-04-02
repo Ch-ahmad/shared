@@ -1,11 +1,8 @@
 import React from "react";
 import { IoHomeSharp } from "react-icons/io5";
 import { FiSearch } from "react-icons/fi";
-import { MdOutlineExplore } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-import { BiSolidMoviePlay } from "react-icons/bi";
-import { BsMessenger } from "react-icons/bs";
-import { CiHeart } from "react-icons/ci";
+
 import { FaRegPlusSquare } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 

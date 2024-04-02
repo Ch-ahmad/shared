@@ -1,20 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-
-import { GoogleOAuthProvider } from "@react-oauth/google";
-import { BrowserRouter } from "react-router-dom";
-import Routes from "./routes";
-
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './routes/index';
+import Provider from './provider';
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GoogleOAuthProvider clientId="161558726994-0nng8hbme2016nrgrqa2k43pc8euhggc.apps.googleusercontent.com">
+    <Provider>
       <BrowserRouter>
         <Routes />
       </BrowserRouter>
-    </GoogleOAuthProvider>
+    </Provider>
   </React.StrictMode>
 );
 
