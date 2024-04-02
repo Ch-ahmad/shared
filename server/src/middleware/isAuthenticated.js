@@ -1,4 +1,4 @@
-import { verifyJsonWebToken } from "../utils/jsonwebtoken";
+import { verifyJsonWebToken } from "../utils/jsonwebtoken.js";
 
 // Middleware: will be used to authenticate the user and then send the content of that user to him only
 export async function isAuthenticated(req, res, next) {

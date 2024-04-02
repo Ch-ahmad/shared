@@ -3,10 +3,6 @@ import jwt from "jsonwebtoken";
 export async function generateJsonWebToken(payload) {
   try {
     const secretKey = process.env.SECRET_KEY_JSON;
-    console.log({
-      secretKey,
-      payload,
-    });
     const token = await jwt.sign(payload, secretKey, {
       noTimestamp: true,
     });

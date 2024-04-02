@@ -37,7 +37,8 @@ export function useFetch({ path, queryKey, config }) {
     ...config,
   });
 
-  const response = data;
+  const response = data?.data;
 
+  console.log({ data });
   return { response, isLoading, refetch, status, error };
 }
