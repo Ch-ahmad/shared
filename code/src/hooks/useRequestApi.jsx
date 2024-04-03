@@ -65,7 +65,7 @@ const useApiRequest = ({
       },
       {
         onSuccess: (res) => {
-          toastSuccess(res?.data?.message);
+          isSuccessToast && toastSuccess(res?.data?.message);
           // Call the callback function here if needed
 
           callback(res);

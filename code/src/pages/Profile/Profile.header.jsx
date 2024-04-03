@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IoSettingsOutline } from 'react-icons/io5';
 import { FaPlus } from 'react-icons/fa6';
 import useMe from '../../hooks/fetch/useMe';
 import Image from '../../components/Image';
 import { SkeletonRounded } from '../../components/Skeleton/Skeleton';
-import Modal from '../../components/Modal/Modal';
 import { Link } from 'react-router-dom';
 
 const ProfileHeader = () => {
-  const [open, setOpen] = useState(true);
   const { isLoading, response } = useMe();
   return (
     <div className="">
@@ -20,28 +18,13 @@ const ProfileHeader = () => {
             }
           />
         ) : (
-          <Modal
-            open={open}
-            onOpenChange={() => {
-              setOpen(false);
-            }}
-          >
-            <Modal.Button>
-              <Image
-                src={response?.profile_image}
-                className={
-                  'size-[150px] min-h-[150px] min-w-[150px] rounded-[50%] object-cover'
-                }
-                alt={'Profile'}
-              />
-            </Modal.Button>
-            <Modal.Content
-              className={'h-[500px] w-[400px]'}
-              title={'Title here'}
-            >
-              <div>Heeloo</div>
-            </Modal.Content>
-          </Modal>
+          <Image
+            src={response?.profile_image}
+            className={
+              'size-[150px] min-h-[150px] min-w-[150px] rounded-[50%] object-cover'
+            }
+            alt={'Profile'}
+          />
         )}
 
         <HeaderDetailsSection isLoading={isLoading} name={response?.name} />

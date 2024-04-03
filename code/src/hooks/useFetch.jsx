@@ -34,6 +34,7 @@ export function useFetch({ path, queryKey, config }) {
     queryFn: fetchData,
     refetchOnWindowFocus: false,
     staleTime: config?.staleTime ?? 60 * 5,
+
     ...config,
   });
 

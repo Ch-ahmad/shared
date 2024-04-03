@@ -1,7 +1,7 @@
 import { usePostContext } from './CreatePostProvider';
 import { motion } from 'framer-motion';
 const CreatePostStepTwo = () => {
-  const { captionText, setCaptionText } = usePostContext();
+  const { captionText, setCaptionText, isPending } = usePostContext();
   return (
     <motion.div
       className="relative flex h-[88%] w-full items-center justify-center p-[10px] "
@@ -21,6 +21,7 @@ const CreatePostStepTwo = () => {
       <textarea
         className="h-[60%] w-full rounded-[10px] border border-textWhite-secondary bg-transparent px-[13px] py-[5px] text-textWhite-primary"
         value={captionText}
+        disabled={isPending}
         onChange={(e) => {
           setCaptionText(e.target.value);
         }}

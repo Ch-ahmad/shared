@@ -2,10 +2,14 @@ import React from 'react';
 import Button from '../../components/Button/Button';
 import { usePostContext } from './CreatePostProvider';
 const CreatePostHeader = () => {
-  const { step, file, setStep } = usePostContext();
+  const { step, file, setStep, handlePostSubmition, isPending } =
+    usePostContext();
   const handleClick = () => {
     if (step === 1) {
       setStep(2);
+    }
+    if (step === 2) {
+      handlePostSubmition();
     }
   };
   return (
@@ -17,13 +21,14 @@ const CreatePostHeader = () => {
           onClick={() => {
             setStep(1);
           }}
+          disabled={isPending}
         >
           Prev
         </Button>
       )}
       <Button
         className="bg-secondary px-[25px] hover:bg-secondary/80"
-        disabled={!file}
+        disabled={!file || isPending}
         onClick={handleClick}
       >
         {step === 1 ? 'Next' : 'Create Post'}

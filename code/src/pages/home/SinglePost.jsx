@@ -1,92 +1,59 @@
-import React, { useState } from "react";
-import { HiDotsHorizontal } from "react-icons/hi";
-import { IoIosSend } from "react-icons/io";
-import { FaRegComment } from "react-icons/fa";
-import { CiHeart } from "react-icons/ci";
-import { CiSaveDown2 } from "react-icons/ci";
-import { FaHeart } from "react-icons/fa";
+import React from 'react';
+import { HiDotsHorizontal } from 'react-icons/hi';
 
-const SinglePost = () => {
+import Image from '../../components/Image';
+import { IMAGE_URL } from '../../utils/constant';
+import PostFooter from './PostFooter';
+import PostComment from './PostComment';
+
+const SinglePost = ({ post }) => {
   return (
     <div className="w-full space-y-[5px]">
-      <PostHeader />
-      <div className="w-full h-[400px] rounded-[10px]">
+      <PostHeader
+        imageSrc={post?.user_id?.profile_image}
+        name={post?.user_id?.name}
+      />
+      <div className="h-[400px] w-full rounded-[10px]">
         <img
-          src="https://placehold.co/600x400"
+          src={IMAGE_URL + post?.media_url}
           alt="Status"
           className="size-full rounded-[10px] object-fill"
         />
       </div>
-      <PostFooter />
-      <PostComment />
+      <PostFooter
+        likes={post?.likes}
+        postId={post?._id}
+        caption={post?.caption}
+      />
+      <PostComment id={post?._id} />
     </div>
   );
 };
 
 export default SinglePost;
 
-function PostHeader() {
+function PostHeader({ imageSrc, name }) {
   return (
     <div className="flex w-full justify-between">
-      <div className="space-x-[10px] flex items-center">
-        {" "}
-        <img
-          src="https://placehold.co/600x400"
-          alt="Status"
-          className="size-[53px] rounded-[50%] object-cover"
+      <div className="flex items-center space-x-[10px]">
+        {' '}
+        <Image
+          src={imageSrc}
+          alt={'Post User Profile'}
+          className={'size-[53px] rounded-[50%] object-cover'}
         />
         <div className="flex ">
           <h2 className="text-[16px] font-bold text-textWhite-primary">
-            John Doe
+            {name}
           </h2>
-          <span className="text-textWhite-secondary font-light text-[16px] ml-[10px]">
+          <span className="ml-[10px] text-[16px] font-light text-textWhite-secondary">
             .3m
           </span>
         </div>
       </div>
       <button>
-        <HiDotsHorizontal className="text-textWhite-primary size-[22px]" />
+        <HiDotsHorizontal className="size-[22px] text-textWhite-primary" />
       </button>
-    </div>
-  );
-}
-function PostFooter() {
-  const [isLiked, setIsLiked] = useState(false);
-  const handleLike = () => {
-    setIsLiked((prv) => !prv);
-  };
-  return (
-    <div className="flex w-full items-center justify-between">
-      <div className="flex items-center gap-x-[15px]">
-        <button
-          className=""
-          onClick={handleLike}
-        >
-          {isLiked ? (
-            <FaHeart className="size-[30px] text-secondary   " />
-          ) : (
-            <CiHeart className="size-[30px] text-textWhite-primary " />
-          )}
-        </button>
-        <button className="">
-          <FaRegComment className="size-[28px] text-textWhite-primary " />
-        </button>
-        <button className="">
-          <IoIosSend className="size-[30px] text-textWhite-primary " />
-        </button>
-      </div>
-      <button>
-        <CiSaveDown2 className="size-[25px] text-textWhite-primary " />
-      </button>
-    </div>
-  );
-}
-function PostComment() {
-  return (
-    <div className="">
-      <p className="text-textWhite-primary">
-        Liked by <bold>Ahmadd</bold> and others
-      </p>
     </div>
   );
 }
