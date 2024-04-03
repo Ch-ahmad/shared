@@ -4,7 +4,7 @@ import { FaPlus } from 'react-icons/fa6';
 import useMe from '../../hooks/fetch/useMe';
 import Image from '../../components/Image';
 import { SkeletonRounded } from '../../components/Skeleton/Skeleton';
-import Modal from '../../components/Modal';
+import Modal from '../../components/Modal/Modal';
 import { Link } from 'react-router-dom';
 
 const ProfileHeader = () => {

@@ -1,33 +1,19 @@
 import React from 'react';
 import CreatePostHeader from './CreatePostHeader';
+import CreatePostStepOne from './CreatePostStepOne';
+import CreatePostStepTwo from './CreatePostStepTwo';
 import { usePostContext } from './CreatePostProvider';
-import CreatePostFileView from './CreatePostFileView';
+import { AnimatePresence } from 'framer-motion';
 const CreateBrowseSteup = () => {
-  const { file, setFile } = usePostContext();
+  const { step } = usePostContext();
+  const steps = [
+    <CreatePostStepOne key={'Step One'} />,
+    <CreatePostStepTwo key={'Step Two'} />,
+  ];
   return (
-    <div className="size-full">
+    <div className="size-full overflow-hidden">
       <CreatePostHeader />
-      {file ? (
-        <CreatePostFileView />
-      ) : (
-        <div className="flex size-full items-center justify-center">
-          <label
-            className="cursor-pointer rounded-[10px] bg-secondary px-[50px] py-[7px] text-[16px] text-textWhite-primary"
-            htmlFor="selectImage"
-          >
-            Browse from computer
-          </label>
-          <input
-            className="sr-only size-0"
-            id="selectImage"
-            type="file"
-            accept="image/*"
-            onChange={(e) => {
-              setFile(e.target.files[0]);
-            }}
-          />
-        </div>
-      )}
+      <AnimatePresence>{steps[step - 1]}</AnimatePresence>
     </div>
   );
 };

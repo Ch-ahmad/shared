@@ -7,8 +7,6 @@ import ProfileTaggedPage from '../pages/Profile/Tagged/ProfileTaggedPage';
 import ProfiledSavedPage from '../pages/Profile/Saved/ProfiledSavedPage';
 import ProfilePostsPage from '../pages/Profile/posts/ProfilePostsPage';
 import EditProfilePage from '../pages/Profile/editprofile/EditProfile.page';
-import { CreatePostPage } from '../pages/createpost/CreatePost.page';
-
 const MainRoutes = () => {
   return (
     <div className="flex h-dvh">
@@ -22,7 +20,6 @@ const MainRoutes = () => {
             <Route path="posts" element={<ProfilePostsPage />} />
           </Route>
           <Route path="/profile/edit" element={<EditProfilePage />} />
-          <Route path="/create-post" element={<CreatePostPage />} />
         </Router>
       </div>
     </div>

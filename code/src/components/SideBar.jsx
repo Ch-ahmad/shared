@@ -2,9 +2,10 @@ import React from 'react';
 import { IoHomeSharp } from 'react-icons/io5';
 import { FiSearch } from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
-
+import { PostProvider } from '../pages/createpost/CreatePostProvider';
 import { FaRegPlusSquare } from 'react-icons/fa';
 import { CgProfile } from 'react-icons/cg';
+import CreatePostModal from '../pages/createpost/CreatePostModal';
 
 const SideBar = () => {
   const sideBars = [
@@ -35,14 +36,24 @@ const SideBar = () => {
         LensFlare
       </div>
       <nav className="space-y-[3px]">
-        {sideBars.map((link, i) => (
-          <SingleLink
-            icon={link.icon}
-            key={link.title + i}
-            title={link.title}
-            url={link.url}
-          />
-        ))}
+        {sideBars.map((link, i) => {
+          // * to show modal instead of page
+          if (link.url === '/create-post') {
+            return (
+              <PostProvider>
+                <CreatePostModal icon={link.icon} title={link.title} />
+              </PostProvider>
+            );
+          }
+          return (
+            <SingleLink
+              icon={link.icon}
+              key={link.title + i}
+              title={link.title}
+              url={link.url}
+            />
+          );
+        })}
       </nav>
     </div>
   );

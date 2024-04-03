@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { HiMiniXMark } from 'react-icons/hi2';
 import { usePostContext } from './CreatePostProvider';
+
 const CreatePostFileView = () => {
   const { file, setFile } = usePostContext();
   return (
@@ -13,10 +14,6 @@ const CreatePostFileView = () => {
       animate={{
         scaleY: 1,
         opacity: 1,
-      }}
-      exit={{
-        scaleY: 0,
-        opacity: 0,
       }}
       transition={{
         mass: 3,
