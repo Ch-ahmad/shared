@@ -3,11 +3,12 @@ import Button from '../../components/Button/Button';
 import Input from '../../components/Input';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { signUpSchema } from '../../utils/lib/schema';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useApiRequest from '../../hooks/useRequestApi';
 import { useGoogleLogin } from '@react-oauth/google';
 import { fetchInfoUsingToken } from '../../utils/gooogle-auth';
 const SignUp = () => {
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors },
@@ -26,6 +27,9 @@ const SignUp = () => {
         email: data.email,
         password: data.password,
       },
+      callback() {
+        navigate('/auth/login');
+      },
     });
   };
   const googleSignUp = useGoogleLogin({
@@ -43,7 +47,7 @@ const SignUp = () => {
           },
           path: 'auth/signup-by-google',
           callback(res) {
-            console.log(res);
+            navigate('/auth/login');
           },
         });
       });
@@ -52,7 +56,7 @@ const SignUp = () => {
   return (
     <div className="flex h-dvh items-center justify-center bg-white ">
       <form
-        className=" shadow-form w-[90%] rounded-lg   border p-[20px] md:w-[500px]"
+        className=" w-[90%] rounded-lg border   p-[20px] shadow-form md:w-[500px]"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="my-[10px]">

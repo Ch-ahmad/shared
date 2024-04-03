@@ -27,11 +27,11 @@ const Login = () => {
   const { setToken } = useAuth();
   const onSubmit = (data) => {
     mutationFunction({
-      path: '/auth/login-email',
+      path: 'auth/login-email',
       data,
       callback(res) {
-        console.log(res);
-        setToken(res?.data?.token);
+        settingTokenInLocalStorage(res?.data?.data?.token);
+        setToken(res?.data?.data?.token);
         navigate('/');
       },
     });
@@ -67,7 +67,7 @@ const Login = () => {
   return (
     <div className="flex h-dvh items-center justify-center bg-white ">
       <form
-        className=" shadow-form w-[90%] rounded-lg   border p-[20px] md:w-[500px]"
+        className=" w-[90%] rounded-lg border   p-[20px] shadow-form md:w-[500px]"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="my-[10px]">

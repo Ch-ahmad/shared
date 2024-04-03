@@ -106,8 +106,8 @@ export async function loginUserByEmail(req, res) {
       id: user._id,
       email,
     };
-    const token = generateJsonWebToken(tokenPayload);
-
+    const token = await generateJsonWebToken(tokenPayload);
+    console.log(token);
     return res.status(200).send({
       message: "Logged in Successfully.",
       data: {
